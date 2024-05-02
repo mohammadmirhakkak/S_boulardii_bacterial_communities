@@ -13,12 +13,12 @@ import pandas as pd
 import glob
 import itertools
 
-red = {"Documents/S_boulardii_modeling/models/20230206/smetana/L_gasseri.xml"}
+red = {"mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/L_gasseri.xml"}
 
-yellow = {"Documents/S_boulardii_modeling/models/20230206/smetana/Lactococcus_lactis_subsp_lactis_Il1403_IL1403.xml"}
+yellow = {"mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/Lactococcus_lactis_subsp_lactis_Il1403_IL1403.xml"}
 
-all_gems = set(glob.glob("Documents/S_boulardii_modeling/models/20230206/smetana/*.xml")) \
-    - {'Documents/S_boulardii_modeling/models/20230206/smetana/yeast_smetana.xml'}
+all_gems = set(glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/*.xml")) \
+    - {'mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/yeast_smetana.xml'}
 green = all_gems - red - yellow
 
 bug2groups = dict()
@@ -147,5 +147,4 @@ for four in all_four:
 
 smetana_table = pd.DataFrame({'community id':smetana_comm,'organism id':smetana_gem})
 
-#smetana_table.to_csv('Documents/S_boulardii_modeling/results/smetana/communities.tsv', sep = '\t', header = False, index = False)
-smetana_table.to_csv('Documents/S_boulardii_modeling/results/20230206/smetana/communities.tsv', sep = '\t', header = False, index = False)
+smetana_table.to_csv('mohammadmirhakkak/S_boulardii_bacterial_communities/res/communities.tsv', sep = '\t', header = False, index = False)
