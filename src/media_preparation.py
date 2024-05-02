@@ -6,7 +6,7 @@ Created on Fri Feb 17 14:16:14 2023
 @author: mohammadmirhakkak
 
 This file makes the media matrix for the pairwise analysis using CarveMe models
-and makes a union of the media to make sure all the CarveMe models an grow for
+and makes a union of the media to make sure all the CarveMe models grow for
 the sake of SMETANA analysis
 """
 
@@ -14,7 +14,7 @@ the sake of SMETANA analysis
 # function created for the yeast model to add lumen exchange reactions
 # to simulate single growth (like in the main analysis code)
 def join_lumen_rxns(model,mapping,Metabolite,Reaction):
-    #Makes lumen exchange reactions and add them to the model
+    #Makes lumen exchange reactions and adds them to the model
     
     for i in range(len(model.reactions)):
         
@@ -130,7 +130,7 @@ Glucose, 20 g/L
 
 import sys
 sys.path
-sys.path.append('/Users/mohammadmirhakkak/Documents/CPLEX_Studio128/cplex/python/3.6/x86-64_osx/')
+sys.path.append('/path/to/cplex/solver')
 
 import pandas as pd
 import glob
@@ -187,7 +187,7 @@ media_dic['EX_ocdcea_e'] = -1000
 
 # import the models and find the required additional nutrients to make them viable
 # through FVA
-model_dir = glob.glob("Documents/S_boulardii_modeling/models/20230206/smetana/*.xml")
+model_dir = glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/*.xml")
 
 media = pd.DataFrame()
 gr_rates = []
@@ -286,8 +286,8 @@ common_comp = list(media_dic.keys())
 media = media.loc[common_comp + essen_comp,]
 
 # check if the yeast model is able to grow on the media
-yeast = cobra.io.read_sbml_model("/Users/mohammadmirhakkak/Documents/S_boulardii_modeling/models/20230206/yeast-GEM.xml")
-id_mapping = pd.read_csv('/Users/mohammadmirhakkak/Documents/S_boulardii_modeling/data/20230206/mets_map_v3_carveme.csv', index_col=0)
+yeast = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/yeast-GEM.xml")
+id_mapping = pd.read_csv('mohammadmirhakkak/S_boulardii_bacterial_communities/dat/mets_map_v3_carveme.csv', index_col=0)
 yeast = join_lumen_rxns(yeast,id_mapping,Metabolite,Reaction)
 media_yeast_index = ['EX_u_' + i[3:-2] for i in media.index]
 media_yeast = media.copy()
@@ -321,12 +321,12 @@ for i in media_yeast.keys():
                     
 ind = [i[3:-2] for i in media.index]
 media.index = ind
-media.to_csv("Documents/S_boulardii_modeling/data/20230206/media_carveme.csv")
+media.to_csv("mohammadmirhakkak/S_boulardii_bacterial_communities/res/media_carveme.csv")
 
 
 # media for smetana
 
-bigg = pd.read_table("Documents/S_boulardii_modeling/data/20230206/bigg_models_metabolites.txt")
+bigg = pd.read_table("mohammadmirhakkak/S_boulardii_bacterial_communities/dat/bigg_models_metabolites.txt")
 
 compound_ex = [i+'_e' for i in media.index]
 compound = [i for i in media.index]
@@ -345,4 +345,4 @@ name[107] = 'Gly-Asp'
     
 smetana_media = pd.DataFrame({"medium":['SC']*len(name), "description":["SC+essentials"]*len(name), \
                "compound":compound, "name":name})
-smetana_media.to_csv("Documents/S_boulardii_modeling/data/20230206/smetana_media.tsv",sep = '\t', index = False)
+smetana_media.to_csv("mohammadmirhakkak/S_boulardii_bacterial_communities/res/smetana_media.tsv",sep = '\t', index = False)
