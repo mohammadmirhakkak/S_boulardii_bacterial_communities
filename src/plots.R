@@ -7,8 +7,8 @@ library(stringr)
 
 
 
-smetana = read.csv("Documents/S_boulardii_modeling/results/meeting_alex_20230331/smetana_complete/_detailed_sorted.csv",header = TRUE)
-smetana_two = read.csv("Documents/S_boulardii_modeling/results/Alex_20230711/smetana/_detailed_compound_name.csv",header = TRUE,row.names = 1)
+smetana = read.csv("mohammadmirhakkak/S_boulardii_bacterial_communities/res/_detailed_sorted.csv",header = TRUE)
+smetana_two = read.csv("mohammadmirhakkak/S_boulardii_bacterial_communities/dat/_detailed_compound_name.csv",header = TRUE,row.names = 1)
 smetana = rbind(smetana,smetana_two)
 
 # yeast model ID
@@ -96,7 +96,7 @@ for (i in 1:length(comm_ids)){
 }
 
 ggexport(plotlist = smetana_plots,
-         filename = "Documents/S_boulardii_modeling/results/pairwise_carveme_231012/suppl_smetana_ribbon.pdf",width = 8.7,height = 5)
+         filename = "mohammadmirhakkak/S_boulardii_bacterial_communities/res/suppl_smetana_ribbon.pdf",width = 8.7,height = 5)
 
 # calculate percentages
 reshaped_df[[1]] <- as_tibble(reshaped_df[[1]])
@@ -148,9 +148,8 @@ reshaped_df[[1]] %>% filter(collection == "Receiver") %>% select(smetana) %>% su
 
 ############################
 #### PUBLICATION FORMAT ####
-######### Figure 4 #########
 ############################
-smetana = read.csv("Documents/S_boulardii_modeling/results/meeting_alex_20230331/smetana_complete/_detailed_sorted.csv",header = TRUE)
+smetana = read.csv("mohammadmirhakkak/S_boulardii_bacterial_communities/res/_detailed_sorted.csv",header = TRUE)
 
 smetana <- as_tibble(smetana)
 
@@ -306,364 +305,13 @@ p1 <- ggplot(donation,aes(x = Donor, y = SMETANA)) +
   scale_shape_manual(values = c("complete" = 21))
 
 
-pdf("Documents/S_boulardii_modeling/results/pairwise_carveme_231012/smetana_fig4_all_AA.pdf",width = 8.5,height = 2)
-p1
-dev.off()
-
-
-
-# AAs greater donation by yeast
-AA_b_ns <- c("Gly","Ser")
-donation_filtered <- donation %>% filter(!`Amino acid` %in% AA_b_ns)
-p1 <- ggplot(donation_filtered,aes(x = Donor, y = SMETANA)) + 
-  geom_boxplot(aes(fill = Donor), col = "black", show.legend = FALSE) +
-  geom_line(aes(group = line_group, col = Type)) +
-  geom_point(aes(fill = point_annot, shape = media), size = 1, color = "black", show.legend = FALSE) +
-  ylab("SMETANA score") + 
-  theme_classic() +
-  facet_wrap(~`Amino acid`, ncol=length(AA)) +
-  theme(strip.background = element_blank(),
-        strip.text = element_text(size = 7),
-        #axis.ticks.x = element_blank(),
-        legend.position = "none",
-        axis.title.x = element_blank(),
-        axis.text.x = element_text(angle = 45, hjust=1,size = 7),
-        text = element_text(size = 8)) +
-  stat_compare_means(label = "p.signif",paired = TRUE,label.x = 1.4, size = 2) +
-  scale_colour_manual(values = c("Bacteria" = "#6e829133",
-                                 "Yeast" = "#00afff33",
-                                 "Cooperative" = "gray",
-                                 "Competitive" = "#cd534c")) +
-  scale_fill_manual(values = c("Bacteria" = "#6e829133",
-                               "Yeast" = "#00afff33",
-                               "y" = "#B6F1FF",
-                               "b" = "#6c818fff")) +
-  scale_shape_manual(values = c("complete" = 21))
-
-
-pdf("Documents/S_boulardii_modeling/results/pairwise_carveme_231012/smetana_fig4_y_greater.pdf",width = 8.5,height = 2)
+pdf("mohammadmirhakkak/S_boulardii_bacterial_communities/res/smetana_fig4_all_AA.pdf",width = 8.5,height = 2)
 p1
 dev.off()
 
 
 
 
-# separate positive and negative communities
-list_plots = list()
-for ( i in 1:length(AA)){
-  donation_filtered <- donation %>% filter(`Amino acid` == AA[i])
-  p1 <- ggplot(donation_filtered,aes(x = Donor, y = SMETANA)) + 
-    geom_boxplot(aes(fill = Donor), col = "black", show.legend = FALSE) +
-    geom_line(aes(group = line_group,col = Type)) +
-    geom_point(aes(fill = point_annot, shape = media), size = 1, color = "black", show.legend = FALSE) +
-    ylab(paste(AA[i],"SMETANA score")) + 
-    theme_classic() +
-    facet_wrap(~Type, ncol=2) +
-    theme(strip.background = element_blank(),
-          strip.text = element_text(size = 5),
-          #axis.ticks.x = element_blank(),
-          axis.title.x = element_blank(),
-          axis.text.x = element_text(angle = 45, hjust=1,size = 7),
-          text = element_text(size = 8)) +
-    stat_compare_means(label = "p.signif",paired = TRUE,label.x = 1.4, size = 2) +
-    scale_colour_manual(values = c("Bacteria" = "#6e829133",
-                                   "Yeast" = "#00afff33",
-                                   "Cooperative" = "gray",
-                                   "Competitive" = "#cd534c")) +
-    scale_fill_manual(values = c("Bacteria" = "#6e829133",
-                                 "Yeast" = "#00afff33",
-                                 "y" = "#00b0ffff",
-                                 "b" = "#6c818fff")) +
-    scale_shape_manual(values = c("complete" = 21))
-  
-  list_plots[[i]] <- p1
-  
-}
-
-multi_plot <- ggarrange(plotlist = list_plots,ncol = 5, nrow = 4,legend = "none")
-pdf("Documents/S_boulardii_modeling/results/pairwise_carveme_231012/smetana_fig4_all_sep.pdf",width = 8,height = 8)
-multi_plot
-dev.off()
-
-
-
-
-#########################
-### donor vs receivor ###
-#########################
-SMETANA <- vector()
-"Amino acid" <- vector()
-Role <- vector()
-ID <- vector()
-Type <- vector()
-for (i in 1:length(comm_ids_num)){
-  community <- smetana %>%
-    filter(community %in% comm_ids[[comm_ids_num[i]]]) %>%
-    filter(compound_name %in% AA)
-  
-  if (nrow(community)==0){
-    next
-  }
-  
-  # filter for top-10 metabiltes
-  #aa = unique(community$compound_name)
-  #sum_smetana = vector()
-  #for (a in 1:length(aa)){
-  #  sum_smetana[i] <- sum(community[community$compound_name==aa[a],"smetana"])
-  #}
-  #aa_ordered = aa[order(sum_smetana, decreasing = T)]
-  #aa_ordered = aa_ordered[1:10]
-  #community <- community %>% filter(compound_name %in% aa_ordered)
-  
-  for (j in 1:length(AA)){
-    score_yd <- community %>% filter(compound_name == AA[j]) %>% filter(donor == "yeastGEM_v8.6.2") %>% select(smetana) %>% unlist() %>% mean()
-    score_yr <- community %>% filter(compound_name == AA[j]) %>% filter(receiver == "yeastGEM_v8.6.2") %>% select(smetana) %>% unlist() %>% mean()
-    SMETANA <- c(SMETANA,score_yd,score_yr)
-    Role <- c(Role,"Donor","Receiver")
-    `Amino acid` <- c(`Amino acid` , rep(AA[j],2))
-    ID <- c(ID, rep(comm_ids[[comm_ids_num[i]]],2))
-    if (comm_ids_num[i] %in% 1:12){
-      Type <- c(Type,rep("Cooperative",2))
-    }
-    if (comm_ids_num[i] %in% 13:14){
-      Type <- c(Type,rep("Competitive",2))
-    }
-  }
-  
-}
-
-yeast_role <- tibble(ID,Type,`Amino acid`,Role,SMETANA)
-yeast_role$media <- "complete"
-
-line_group = rep(1:(nrow(yeast_role)/2),each = 2)
-yeast_role$line_group = line_group
-role <- yeast_role$Role
-point_annot <- ifelse(role == "Receiver", "r", "d")
-yeast_role$point_annot = point_annot
-p1 <- ggplot(yeast_role,aes(x = Role, y = SMETANA)) + 
-  geom_boxplot(aes(fill = Role), col = "black", show.legend = FALSE) +
-  geom_line(aes(group = line_group), col = 'gray') +
-  geom_point(aes(fill = point_annot, shape = media), size = 2, color = "black", show.legend = FALSE) +
-  ylab("SMETANA score") + 
-  theme_classic() +
-  facet_wrap(~`Amino acid`, ncol=length(AA)) +
-  theme(strip.background = element_blank(),
-        strip.text = element_text(size = 6),
-        #axis.ticks.x = element_blank(),
-        axis.title.x = element_blank(),
-        axis.text.x = element_text(angle = 45, hjust=1,size = 7),
-        text = element_text(size = 8)) +
-  stat_compare_means(label = "p.signif",paired = TRUE,label.x = 1.4, size = 3) +
-  scale_colour_manual(values = c("Receiver" = "#6e829133",
-                                 "Donor" = "#00afff33")) +
-  scale_fill_manual(values = c("Receiver" = "#6e829133",
-                               "Donor" = "#00afff33",
-                               "d" = "#00b0ffff",
-                               "r" = "#6c818fff")) +
-  scale_shape_manual(values = c("complete" = 21))
-
-
-pdf("Documents/S_boulardii_modeling/results/pairwise_carveme_231012/yeast_donor_receiver_all.pdf",width = 12,height = 3)
-p1
-dev.off()
-
-
-#################
-# based on Mean # Yeast donation vs Bacterial donation
-#################
-SMETANA <- vector()
-"Amino acid" <- vector()
-Donor <- vector()
-ID <- vector()
-Type <- vector()
-for (i in 1:length(comm_ids_num)){
-  community <- smetana %>%
-    filter(community %in% comm_ids[[comm_ids_num[i]]]) %>%
-    filter(compound_name %in% AA)
-  
-  if (nrow(community)==0){
-    next
-  }
-  
-  # filter for top-10 metabiltes
-  #aa = unique(community$compound_name)
-  #sum_smetana = vector()
-  #for (a in 1:length(aa)){
-  #  sum_smetana[i] <- sum(community[community$compound_name==aa[a],"smetana"])
-  #}
-  #aa_ordered = aa[order(sum_smetana, decreasing = T)]
-  #aa_ordered = aa_ordered[1:10]
-  #community <- community %>% filter(compound_name %in% aa_ordered)
-  
-  for (j in 1:length(AA)){
-    score_y <- community %>% filter(compound_name == AA[j]) %>% filter(donor == "yeastGEM_v8.6.2") %>% select(smetana) %>% unlist() %>% mean()
-    score_b <- community %>% filter(compound_name == AA[j]) %>% filter(donor != "yeastGEM_v8.6.2") %>% select(smetana) %>% unlist() %>% mean()
-    if (is.na(score_y)){
-      score_y <- 0
-    }
-    if (is.na(score_b)){
-      score_b <- 0
-    }
-    SMETANA <- c(SMETANA,score_y,score_b)
-    Donor <- c(Donor,"Yeast","Bacteria")
-    `Amino acid` <- c(`Amino acid` , rep(AA[j],2))
-    ID <- c(ID, rep(comm_ids[[comm_ids_num[i]]],2))
-    if (comm_ids_num[i] %in% 1:21){
-      Type <- c(Type,rep("Cooperative",2))
-    }
-    if (comm_ids_num[i] %in% 22:25){
-      Type <- c(Type,rep("Competitive",2))
-    }
-  }
-  
-}
-
-donation <- tibble(ID,Type,`Amino acid`,Donor,SMETANA)
-donation$media <- "complete"
-
-line_group = rep(1:(nrow(donation)/2),each = 2)
-donation$line_group = line_group
-donor <- donation$Donor
-point_annot <- ifelse(donor == "Yeast", "y", "b")
-donation$point_annot = point_annot
-p1 <- ggplot(donation,aes(x = Donor, y = SMETANA)) + 
-  geom_boxplot(aes(fill = Donor), col = "black", show.legend = FALSE) +
-  geom_line(aes(group = line_group, col = Type)) +
-  geom_point(aes(fill = point_annot, shape = media), size = 1, color = "black", show.legend = FALSE) +
-  ylab("SMETANA score") + 
-  theme_classic() +
-  facet_wrap(~`Amino acid`, ncol=length(AA)) +
-  theme(strip.background = element_blank(),
-        strip.text = element_text(size = 7),
-        #axis.ticks.x = element_blank(),
-        legend.position = "none",
-        axis.title.x = element_blank(),
-        axis.text.x = element_text(angle = 45, hjust=1,size = 7),
-        text = element_text(size = 8)) +
-  stat_compare_means(label = "p.signif",paired = TRUE,label.x = 1.4, size = 2) +
-  scale_colour_manual(values = c("Bacteria" = "#6e829133",
-                                 "Yeast" = "#00afff33",
-                                 "Cooperative" = "gray",
-                                 "Competitive" = "#cd534c")) +
-  scale_fill_manual(values = c("Bacteria" = "#6e829133",
-                               "Yeast" = "#00afff33",
-                               "y" = "#B6F1FF",
-                               "b" = "#6c818fff")) +
-  scale_shape_manual(values = c("complete" = 21))
-
-
-pdf("Documents/S_boulardii_modeling/results/pairwise_carveme_231012/smetana_fig4_all_AA_mean.pdf",width = 8.5,height = 2)
-p1
-dev.off()
-
-
-
-# AAs greater donation by yeast
-AA_b_ns <- c("Gly","Lys","Ser")
-donation_filtered <- donation %>% filter(!`Amino acid` %in% AA_b_ns)
-p1 <- ggplot(donation_filtered,aes(x = Donor, y = SMETANA)) + 
-  geom_boxplot(aes(fill = Donor), col = "black", show.legend = FALSE) +
-  geom_line(aes(group = line_group, col = Type)) +
-  geom_point(aes(fill = point_annot, shape = media), size = 1, color = "black", show.legend = FALSE) +
-  ylab("SMETANA score") + 
-  theme_classic() +
-  facet_wrap(~`Amino acid`, ncol=length(AA)) +
-  theme(strip.background = element_blank(),
-        strip.text = element_text(size = 7),
-        #axis.ticks.x = element_blank(),
-        legend.position = "none",
-        axis.title.x = element_blank(),
-        axis.text.x = element_text(angle = 45, hjust=1,size = 7),
-        text = element_text(size = 8)) +
-  stat_compare_means(label = "p.signif",paired = TRUE,label.x = 1.4, size = 2) +
-  scale_colour_manual(values = c("Bacteria" = "#6e829133",
-                                 "Yeast" = "#00afff33",
-                                 "Cooperative" = "gray",
-                                 "Competitive" = "#cd534c")) +
-  scale_fill_manual(values = c("Bacteria" = "#6e829133",
-                               "Yeast" = "#00afff33",
-                               "y" = "#B6F1FF",
-                               "b" = "#6c818fff")) +
-  scale_shape_manual(values = c("complete" = 21))
-
-
-pdf("Documents/S_boulardii_modeling/results/pairwise_carveme_231012/smetana_fig4_y_greater_mean.pdf",width = 8.5,height = 2)
-p1
-dev.off()
-
-
-
-
-
-# receiving serine
-SMETANA <- vector()
-Role <- vector()
-ID <- vector()
-Type <- vector()
-`Amino acid` <- vector()
-for (i in 1:length(comm_ids_num)){
-  community <- smetana %>%
-    filter(community %in% comm_ids[[comm_ids_num[i]]]) %>%
-    filter(compound_name %in% AA)
-  
-  if (nrow(community)==0){
-    next
-  }
-  
-  # filter for top-10 metabiltes
-  #aa = unique(community$compound_name)
-  #sum_smetana = vector()
-  #for (a in 1:length(aa)){
-  #  sum_smetana[i] <- sum(community[community$compound_name==aa[a],"smetana"])
-  #}
-  #aa_ordered = aa[order(sum_smetana, decreasing = T)]
-  #aa_ordered = aa_ordered[1:10]
-  #community <- community %>% filter(compound_name %in% aa_ordered)
-  
-  score <- community %>% filter(compound_name == "L-Serine") %>% select(smetana) %>% unlist() %>% mean()
-  SMETANA <- c(SMETANA,score)
-  Role <- c(Role,"Receiver")
-  `Amino acid` <- c(`Amino acid` , "L-Seine")
-  ID <- c(ID, rep(comm_ids[[comm_ids_num[i]]],1))
-  if (comm_ids_num[i] %in% 1:12){
-    Type <- c(Type,rep("Cooperative",1))
-  }
-  if (comm_ids_num[i] %in% 13:14){
-    Type <- c(Type,rep("Competitive",1))
-  }
-  
-}
-
-serine_receive <- tibble(ID,Type,`Amino acid`,Role,SMETANA)
-serine_receive$media <- "complete"
-p1 <- ggplot(serine_receive,aes(x = Role, y = SMETANA)) + 
-  geom_boxplot(aes(fill = Role), col = "black", show.legend = FALSE) +
-  #geom_line(aes(group = line_group), col = 'gray') +
-  geom_point(aes(fill = Type, shape = media), size = 2, color = "black", show.legend = FALSE) +
-  ylab("L-Serine SMETANA score") + 
-  theme_classic() +
-  #facet_wrap(~`Amino acid`, ncol=length(AA)) +
-  theme(strip.background = element_blank(),
-        strip.text = element_text(size = 6),
-        #axis.ticks.x = element_blank(),
-        axis.title.x = element_blank(),
-        axis.text.x = element_text(angle = 45, hjust=1,size = 7),
-        text = element_text(size = 8)) +
-  #stat_compare_means(label = "p.signif",paired = TRUE,label.x = 1.4, size = 3) +
-  scale_colour_manual(values = c("Receiver" = "#6e829133",
-                                 "Donor" = "#00afff33",
-                                 "Cooperative" = "gray",
-                                 "Competitive" = "#cd534c")) +
-  scale_fill_manual(values = c("Receiver" = "#6e829133",
-                               "Donor" = "#00afff33",
-                               "Cooperative" = "gray",
-                               "Competitive" = "#cd534c")) +
-  scale_shape_manual(values = c("complete" = 21))
-
-
-pdf("Documents/S_boulardii_modeling/results/pairwise_carveme_231012/serine_receivers.pdf",width = 3,height = 4)
-p1
-dev.off()
 
 
 
@@ -673,7 +321,7 @@ dev.off()
 ############################
 ## SUPPL BOXPLOTs SMETANA ##
 ############################
-smetana = read.csv("Documents/S_boulardii_modeling/results/meeting_alex_20230331/smetana_complete/_detailed_sorted.csv",header = TRUE)
+smetana = read.csv("mohammadmirhakkak/S_boulardii_bacterial_communities/res/_detailed_sorted.csv",header = TRUE)
 
 smetana <- as_tibble(smetana)
 
@@ -850,4 +498,4 @@ for (i in 0:10){
 }
 
 ggexport(plotlist = ggexport_plots,
-         filename = "Documents/S_boulardii_modeling/results/pairwise_carveme_231012/Suppl_smetana_all_compounds.pdf",width = 8, height = 8)
+         filename = "mohammadmirhakkak/S_boulardii_bacterial_communities/res/Suppl_smetana_all_compounds.pdf",width = 8, height = 8)
