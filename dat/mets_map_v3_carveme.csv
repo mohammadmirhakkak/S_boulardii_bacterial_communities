@@ -1,0 +1,245 @@
+,yeast_ID,yeast_REPLACEMENT_ID,AGORA_abbr,bigg_reaction,CARVEME_abbr
+d-glucose,D-glucose[e],s_0565,glc_D,EX_glc__D_e,glc__D
+d-fructose,D-fructose[e],s_0554,fru,EX_fru_e,fru
+l-fucose,,,fuc_L,EX_fuc__L_e,fuc__L
+d-ribose,D-ribose[e],s_0576,rib_D,EX_rib__D_e,rib__D
+d-xylose,D-xylose[e],s_0579,xyl_D,EX_xyl__D_e,xyl__D
+l-arabinose,L-arabinose[e],s_0964,arab_L,EX_arab__L_e,arab__L
+d-galactose,D-galactose[e],s_0559,gal,EX_gal_e,gal
+raffinose,raffinose[e],s_3715,raffin,EX_raffin_e,raffin
+l-rhamnose,,,rmn,EX_rmn_e,rmn
+stachyose,,,stys,,
+sucrose,sucrose[e],s_1466,sucr,EX_sucr_e,sucr
+l-alanine,L-alanine[e],s_0956,ala_L,EX_ala__L_e,ala__L
+l-arginine,L-arginine[e],s_0966,arg_L,EX_arg__L_e,arg__L
+l-asparagine,L-asparagine[e],s_0970,asn_L,EX_asn__L_e,asn__L
+l-aspartate,L-aspartate[e],s_0974,asp_L,EX_asp__L_e,asp__L
+l-glutamine,L-glutamine[e],s_1000,gln_L,EX_gln__L_e,gln__L
+l-glutamate,L-glutamate[e],s_0992,glu_L,EX_glu__L_e,glu__L
+glycine,L-glycine[e],s_1004,gly,EX_gly_e,gly
+l-cysteine,L-cysteine[e],s_0982,cys_L,EX_cys__L_e,cys__L
+l-histidine,L-histidine[e],s_1007,his_L,EX_his__L_e,his__L
+l-isoleucine,L-isoleucine[e],s_1017,ile_L,EX_ile__L_e,ile__L
+l-leucine,L-leucine[e],s_1022,leu_L,EX_leu__L_e,leu__L
+l-lysine,L-lysine[e],s_1026,lys_L,EX_lys__L_e,lys__L
+l-methionine,L-methionine[e],s_1030,met_L,EX_met__L_e,met__L
+l-phenylalanine,L-phenylalanine[e],s_1033,phe_L,EX_phe__L_e,phe__L
+l-proline,L-proline[e],s_1036,pro_L,EX_pro__L_e,pro__L
+l-serine,L-serine[e],s_1041,ser_L,EX_ser__L_e,ser__L
+l-valine,L-valine[e],s_1057,val_L,EX_val__L_e,val__L
+l-threonine,L-threonine[e],s_1046,thr_L,EX_thr__L_e,thr__L
+l-tryptophan,L-tryptophan[e],s_1049,trp_L,EX_trp__L_e,trp__L
+l-tyrosine,L-tyrosine[e],s_1052,tyr_L,EX_tyr__L_e,tyr__L
+l-citrulline,L-citrulline[e],s_4166,citr_L,EX_citr__L_e,citr__L
+taurine,taurine[e],s_1472,taur,EX_taur_e,taur
+thiamin,thiamine[e],s_1490,thm,EX_thm_e,thm
+pyridoxine,pyridoxine[e],s_1397,pydxn,EX_pydxn_e,pydxn
+biotin,biotin[e],s_0452,btn,EX_btn_e,btn
+l-ascorbate,,,,"
+EX_ascb__L_e",ascb__L
+cob(i)alamin,,,cbl1,EX_cbl1_e,cbl1
+folate,folate[e],s_0720,fol,EX_fol_e,fol
+riboflavin,riboflavin[e],s_1406,ribflv,EX_ribflv_e,ribflv
+(r)-pantothenate,(R)-pantothenate[e],s_0032,pnto_R,EX_pnto__R_e,pnto__R
+dimethyl sulfide,,,dms,EX_dms_e,dms
+chloride,chloride[e],s_4200,cl,EX_cl_e,cl
+nicotinate,nicotinate[e],s_1220,nac,EX_nac_e,nac
+sulfate,,s_1468,so4,EX_so4_e,so4
+phosphate,phosphate[e],s_1324,pi,EX_pi_e,pi
+ammonia,ammonium[e],s_0420,nh4,EX_nh4_e,nh4
+hydrogen sulfide,,,h2s,EX_h2s_e,h2s
+water,H2O[e],s_0805,h2o,EX_h2o_e,h2o
+calcium (ca2+),Ca(2+)[e],s_4199,ca2,EX_ca2_e,ca2
+copper (cu2+),Cu2(+)[e],s_4201,cu2,EX_cu2_e,cu2
+cobalt (co2+),,,cobalt2,EX_cobalt2_e,cobalt2
+iron (fe2+),iron(2+)[e],s_0925,fe2,EX_fe2_e,fe2
+iron (fe3+),iron(3+)[e],s_3936,fe3,EX_fe3_e,fe3
+potassium (k+),potassium[e],s_1374,k,EX_k_e,k
+magnesium (mg2+),Mg(2+)[e],s_4204,mg2,EX_mg2_e,mg2
+manganese (mn2+),Mn(2+)[e],s_4202,mn2,EX_mn2_e,mn2
+sodium (na+),sodium[e],s_1438,na1,EX_na1_e,na1
+nickel (ni2+),,,,,
+zinc (zn2+),Zn(2+)[e],s_4203,zn2,EX_zn2_e,zn2
+succinate,succinate[e],s_1459,succ,EX_succ_e,succ
+propionate,,,ppa,EX_ppa_e,ppa
+propanal,propanal[e],s_4236,ppal,EX_ppal_e,ppal
+l-lactate,(S)-lactate[e],s_0064,lac_L,EX_lac__L_e,lac__L
+imp,,,imp,EX_imp_e,imp
+guanine,guanine[e],s_0788,gua,EX_gua_e,gua
+reduced glutathione,glutathione[e],s_0751,gthrd,EX_gthrd_e,gthrd
+glycolate,,,glyclt,EX_glyclt_e,glyclt
+methanethiol,,,ch4s,EX_ch4s_e,ch4s
+(r)-3-hydroxybutanoate,,,bhb,EX_bhb_e,bhb
+adenine,adenine[e],s_0384,ade,EX_ade_e,ade
+acetone,,,acetone,EX_acetone_e,acetone
+acetaldehyde,acetaldehyde[e],s_0360,acald,EX_acald_e,acald
+3 methylbutanal,3-methylbutanal[e],,,EX_3mbal_e,3mbal
+guanidine,,,M02035,,
+l-carnosine,,,carn,EX_carn_e,carn
+citrate,citrate[e],s_0523,cit,EX_cit_e,cit
+creatine,,,creat,EX_creat_e,creat
+creatinine,creatinine[e],s_4091,crtn,EX_crtn_e,crtn
+l-carnitine,(R)-carnitine[e],s_0022,crn,EX_crn_e,crn
+deoxycytidine,deoxycytidine[e],s_0611,dcyt,EX_dcyt_e,dcyt
+uracil,uracil[e],s_1551,ura,EX_ura_e,ura
+urea,urea[e],s_1553,urea,EX_urea_e,urea
+xanthine,9H-xanthine[e],s_0358,xan,EX_xan_e,xan
+H+,H+[e],s_0796,h,EX_h_e,h
+Oxygen,O2[e],s_1277,o2,EX_o2_e,o2
+"2',3'-cyclic AMP","2',3'-cyclic AMP[e]",s_4161,23camp,EX_23camp_e,23camp
+"2',3'-cyclic UMP","2',3'-cyclic UMP[e]",s_4103,23cump,EX_23cump_e,23cump
+2-phosphoglycolate,2-phosphoglycolate[e],s_4070,2pglyc,EX_2pglyc_e,2pglyc
+3'-AMP,3'-AMP[e],s_4107,3amp,EX_3amp_e,3amp
+3'-GMP,3'-GMP[e],s_4069,3gmp,EX_3gmp_e,3gmp
+gamma-aminobutyrate,gamma-aminobutyrate[e],s_0736,4abut,EX_4abut_e,4abut
+adenosine,adenosine[e],s_0387,adn,EX_adn_e,adn
+2-oxoglutarate,2-oxoglutarate[e],s_0181,akg,EX_akg_e,akg
+cytidine,cytidine[e],s_0544,cytd,EX_cytd_e,cytd
+D-glucose 6-phosphate,D-glucose 6-phosphate[e],s_4150,g6p,EX_g6p_e,g6p
+D-Glucosamine,D-Glucosamine[e],s_4164,gam,EX_gam_e,gam
+alpha-D-glucosamine 6-phosphate,alpha-D-glucosamine 6-phosphate[e],s_0413,gam6p,EX_gam6p_e,gam6p
+glycerol,glycerol[e],s_0766,glyc,EX_glyc_e,glyc
+guanosine,guanosine[e],s_0791,gsn,EX_gsn_e,gsn
+glutathione disulfide,glutathione disulfide[e],s_0755,gthox,EX_gthox_e,gthox
+indol-3-ylacetaldehyde,indol-3-ylacetaldehyde[e],s_0851,id3acald,EX_id3acald_e,id3acald
+(S)-malate,(S)-malate[e],s_0067,mal_L,EX_mal__L_e,mal__L
+S-methyl-L-methionine,S-methyl-L-methionine[e],s_1425,mmet,EX_mmet_e,mmet
+NMN,NMN[e],s_1225,nmn,EX_nmn_e,nmn
+ornithine,ornithine[e],s_1267,orn,EX_orn_e,orn
+3-phospho-serine,3-phospho-serine[e],s_4147,pser_L,EX_pser__L_e,pser__L
+pyruvate,pyruvate[e],s_1400,pyr,EX_pyr_e,pyr
+D-tagatose,D-tagatose[e],s_4130,tagat_D,EX_tag__D_e,tag__D
+UMP,UMP[e],s_4151,ump,EX_ump_e,ump
+Glutathione disulfide,Glutathione disulfide[e],s_0755,gthox,EX_gthox_e,gthox
+acetate,acetate[e],s_0364,ac,EX_ac_e,ac
+formate,formate[e],s_0723,for,EX_for_e,for
+4-aminobenzoate,,s_0272,4abz,EX_4abz_e,4abz
+"7,8-diaminononanoate",,s_0342,dann,EX_dann_e,dann
+8-amino-7-oxononanoate,,s_0354,8aonn,EX_8aonn_e,8aonn
+allantoin,,s_0408,alltn,EX_alltn_e,alltn
+trehalose,,s_1521,tre,EX_tre_e,tre
+carbon dioxide,,s_0458,co2,EX_co2_e,co2
+choline,,s_0513,chol,EX_chol_e,chol
+cytosine,,s_0546,csn,EX_csn_e,csn
+D-arabinose,,s_0549,arab_D,EX_arab__D_e,arab__D
+D-galacturonate,,s_0560,galur,EX_galur_e,galur
+D-mannose,,s_0572,man,EX_man_e,man
+ethanol,,s_0681,etoh,EX_etoh_e,etoh
+ethanolamine,,s_0684,etha,EX_etha_e,etha
+glycolaldehyde,,s_0776,gcald,EX_gcald_e,gcald
+hypoxanthine,,s_0844,hxan,EX_hxan_e,hxan
+inosine,,s_0857,ins,EX_ins_e,ins
+L-homoserine,,s_1015,hom_L,EX_hom__L_e,hom__L
+L-sorbose,,s_1044,srb_L,EX_srb__L_e,srb__L
+myo-inositol,,s_1154,inost,EX_inost_e,inost
+pectin,,s_1309,pect,EX_pect_e,pect
+phenylacetaldehyde,,s_1319,pacald,EX_pacald_e,pacald
+putrescine,,s_1390,ptrc,EX_ptrc_e,ptrc
+spermidine,,s_1440,spmd,EX_spmd_e,spmd
+spermine,,s_1443,sprm,EX_sprm_e,sprm
+thymidine,,s_1494,thymd,EX_thymd_e,thymd
+uridine,,s_1557,uri,EX_uri_e,uri
+xanthosine,,s_1564,xtsn,EX_xtsn_e,xtsn
+cysteamine,,s_4074,cysam,EX_cysam_e,cysam
+methanol,,s_4124,meoh,EX_meoh_e,meoh
+5-dehydro-D-gluconate,,s_4118,5dglcn,EX_5dglcn_e,5dglcn
+2-phospho-D-glyceric acid,,s_4141,2pg,EX_2pg_e,2pg
+O-phosphoethanolamine,,s_4154,ethamp,EX_ethamp_e,ethamp
+D-mannose 1-phosphate,,s_4156,man1p,EX_man1p_e,man1p
+N-acetyl-L-cysteine,,s_4111,CE1310,EX_CE1310_e,CE1310
+3'-UMP,,s_4084,3ump,EX_3ump_e,3ump
+hydrogen sulfide,,s_4263,HC00250,EX_HC00250_e,HC00250
+(R)-lactate,,s_0026,lac_D,EX_lac__D_e,lac__D
+"(R,R)-2,3-butanediol",,s_0036,btd_RR,EX_btd_RR_e,btd_RR
+1-(sn-glycero-3-phospho)-1D-myo-inositol,,s_0080,M02911,EX_g3pi_e,g3pi
+1-acylglycerophosphocholine,,s_0084,lpchol_hs,EX_lpchol_hs_e,lpchol_hs
+2'-deoxyguanosine,,s_0135,dgsn,EX_dgsn_e,dgsn
+2'-deoxyinosine,,s_0137,din,EX_din_e,din
+5-aminolevulinate,,s_0316,5aop,EX_5aop_e,5aop
+allantoate,,s_0406,alltt,EX_alltt_e,alltt
+FMN,,s_0715,fmn,EX_fmn_e,fmn
+fumarate,,s_0726,fum,EX_fum_e,fum
+L-arabinitol,,s_0962,abt,EX_abt_e,abt
+L-glucitol,,s_0990,sbt_L,EX_sbt__L_e,sbt__L
+maltose,,s_1106,malt,EX_malt_e,malt
+octanoate,,s_1250,octa,EX_octa_e,octa
+oxaloacetate,,s_1272,oaa,EX_oaa_e,oaa
+palmitate,,s_1288,hdca,EX_hdca_e,hdca
+palmitoleate,,s_1295,hdcea,EX_hdcea_e,hdcea
+S-adenosyl-L-methionine,,s_1418,amet,EX_amet_e,amet
+sn-glycero-3-phosphocholine,,s_1435,g3pc,EX_g3pc_e,g3pc
+sulphite,,s_1470,so3,EX_so3_e,so3
+TMP,,s_1498,thmmp,EX_thmmp_e,thmmp
+xylitol,,s_1567,xylt,EX_xylt_e,xylt
+zymosterol,,s_1571,zymst,EX_zymst_e,zymst
+butyrate,,s_2822,but,EX_but_e,but
+oleate,,s_2826,ocdcea,EX_ocdcea_e,ocdcea
+myristate,,s_1163,ttdca,EX_ttdca_e,ttdca
+melibiose,,s_3716,melib,EX_melib_e,melib
+Ala-Gly,,s_4170,alagly,EX_alagly_e,alagly
+D-glucose 1-phosphate,,s_4145,g1p,EX_g1p_e,g1p
+Ala-Gln,,s_4034,alagln,EX_ala_L_gln__L_e,ala_L_gln__L
+Ala-Leu,,s_4168,alaleu,EX_alaleu_e,alaleu
+Gly-Gln,,s_4056,glygln,EX_glygln_e,glygln
+Ala-His,,s_4050,alahis,EX_alahis_e,alahis
+Gly-Asn,,s_4053,glyasn,EX_gly_asn__L_e,gly_asn__L
+Ala-Glu,,s_4037,alaglu,EX_ala_L_glu__L_e,ala_L_glu__L
+Ala-Asp,,s_4119,alaasp,EX_ala_L_asp__L_e,ala_L_asp__L
+Gly-Glu,,s_4059,glyglu,EX_glyglu_e,glyglu
+Ala-Thr,,s_4040,alathr,EX_alathr_e,alathr
+Met-Ala,,s_4143,metala,EX_met_L_ala__L_e,met_L_ala__L
+2-aminobutanoate,,s_4080,C02356,EX_C02356_e,C02356
+choline phosphate,,s_4158,cholp,EX_cholp_e,cholp
+glycerol 1-phosphate,,s_4049,glyc3p,EX_glyc3p_e,glyc3p
+GMP,,s_4148,gmp,EX_gmp_e,gmp
+phosphoenolpyruvate,,s_4152,pep,EX_pep_e,pep
+glycerol 2-phosphate(2-),,s_4063,glyc2p,EX_glyc2p_e,glyc2p
+6-phospho-D-gluconate,,s_4155,6pgc,EX_6pgc_e,6pgc
+D-mannose 6-phosphate,,s_4153,man6p,EX_man6p_e,man6p
+"2',3'-cyclic GMP",,s_4095,23cgmp,EX_23cgmp_e,23cgmp
+AMP,,s_4160,amp,EX_amp_e,amp
+N(alpha)-acetyl-L-methionine,,s_4135,C02712,EX_C02712_e,C02712
+L-Methionine S-oxide,,s_4176,metsox_S_L,EX_metsox_S__L_e,metsox_S__L
+L-cysteate,,s_4139,Lcyst,EX_Lcyst_e,Lcyst
+acetoacetate,,s_4133,acac,EX_acac_e,acac
+CMP,,s_4163,cmp,EX_cmp_e,cmp
+thymidine 5'-monophosphate,,s_4047,dtmp,EX_dtmp_e,dtmp
+"2',3'-cyclic CMP",,s_4127,23ccmp,EX_23ccmp_e,23ccmp
+(4-hydroxyphenyl)acetaldehyde,,s_4248,4hoxpacd,EX_4hoxpacd_e,4hoxpacd
+taurocholate,,s_4268,tchola,EX_tchola_e,tchola
+lanosterol,,s_1061,lanost,EX_lanost_e,lanost
+dttp,,s_0651,,EX_dttp_e,dttp
+episterol,,s_0659,,EX_epist_e,epist
+ergosterol,,s_0668,,EX_ergst_e,ergst
+fecosterol,,s_0702,,EX_fecost_e,fecost
+glyoxylate,,s_0780,,EX_glx_e,glx
+isoamyl acetate,,s_0928,,EX_iamac_e,iamac
+isobutyl acetate,,s_0936,,EX_ibutac_e,ibutac
+phenethyl acetate,,s_1317,,EX_pheac_e,pheac
+gly-met,,s_4085,,EX_gly_met_e,gly_met
+diphosphate,,s_4157,,EX_ppi_e,ppi
+propanol,,s_4237,,EX_ppoh_e,ppoh
+(1->3)-beta-D-glucan,,s_0003,,EX_13BDglcn_e,13BDglcn
+(R)-mevalonate,,s_0029,,EX_mev__R_e,mev__R
+(S)-3-methyl-2-oxopentanoate,,s_0058,,EX_3mob_e,3mob
+2'-deoxyadenosine,,s_0133,,EX_dad_2_e,dad_2
+2'-deoxyuridine,,s_0139,,EX_duri_e,duri
+2-methylbutanal,,s_0167,,EX_2mbald_e,2mbald
+2-methylbutanol,,s_0170,,EX_2mbtoh_e,2mbtoh
+2-methylbutyl acetate,,s_0173,,EX_2mbac_e,2mbac
+3-methylbutanal,,s_0235,,EX_3mbald_e,3mbald
+5-formyltetrahydrofolic acid,,s_0320,,EX_5fthf_e,5fthf
+"adenosine 3',5'-bismonophosphate",,s_0391,,EX_pap_e,pap
+D-glucitol,,s_0562,,EX_sbt__D_e,sbt__D
+decanoate,,s_0597,,EX_dca_e,dca
+isoamylol,,s_0930,,EX_iamoh_e,iamoh
+isobutanol,,s_0933,,EX_ibtol_e,ibtol
+"N,N'-diformyldityrosine",,s_1186,,EX_Nbfortyr_e,Nbfortyr
+tryptophol,,s_1530,,EX_ind3eth_e,ind3eth
+hexanoate,,s_2824,,EX_hxcoa_e,hxcoa
+alpha-maltotriose,,s_4140,,EX_malttr_e,malttr
+methyl alpha-D-glucopyranoside,,s_4125,,EX_madg_e,madg
+glycerone,,s_4167,,EX_dha_e,dha
+N(omega)-phospho-L-arginine,,s_4093,,EX_argp_e,argp
+2-hydroxyethane-1-sulfonate,,s_4116,,EX_isetac_e,isetac
+N-acetyl-L-glutamate,,s_4172,,EX_acglu_e,acglu
