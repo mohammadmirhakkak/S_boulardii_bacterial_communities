@@ -1,19 +1,24 @@
 #!/bin/bash
 
 
-# overall results
-smetana Documents/S_boulardii_modeling/models/20230206/smetana/*.xml -c \
-Documents/S_boulardii_modeling/results/20230206/smetana/communities.tsv \
--m SC --mediadb Documents/S_boulardii_modeling/data/20230206/smetana_media.tsv \
---output Documents/S_boulardii_modeling/results/20230206/smetana/ --flavor ucsd --detailed
+# overall results (default media)
+smetana mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/*.xml -c \
+mohammadmirhakkak/S_boulardii_bacterial_communities/res/communities.tsv \
+--output mohammadmirhakkak/S_boulardii_bacterial_communities/res/ --flavor ucsd
 
+# detailed results (default media)
+smetana mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/*.xml -c \
+mohammadmirhakkak/S_boulardii_bacterial_communities/res/communities.tsv \
+--output mohammadmirhakkak/S_boulardii_bacterial_communities/res/ --flavor ucsd --detailed
 
-smetana Documents/S_boulardii_modeling/models/20230206/smetana/*.xml -c \
-Documents/S_boulardii_modeling/results/20230206/smetana/communities_test.tsv \
--m SC --mediadb Documents/S_boulardii_modeling/data/20230206/smetana_media.tsv \
---output Documents/S_boulardii_modeling/results/20230206/smetana/ --flavor ucsd --detailed
+# overall results (SC media)
+smetana mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/*.xml -c \
+mohammadmirhakkak/S_boulardii_bacterial_communities/res/communities.tsv \
+-m SC --mediadb mohammadmirhakkak/S_boulardii_bacterial_communities/dat/smetana_media.tsv \
+--output mohammadmirhakkak/S_boulardii_bacterial_communities/res/SC --flavor ucsd
 
-
-smetana Documents/S_boulardii_modeling/models/20230206/smetana/*.xml -c \
-Documents/S_boulardii_modeling/results/20230206/smetana/communities_test.tsv \
---output Documents/S_boulardii_modeling/results/20230206/smetana/ --flavor ucsd --detailed
+# detailed results (SC media)
+smetana mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/*.xml -c \
+mohammadmirhakkak/S_boulardii_bacterial_communities/res/communities.tsv \
+-m SC --mediadb mohammadmirhakkak/S_boulardii_bacterial_communities/dat/smetana_media.tsv \
+--output mohammadmirhakkak/S_boulardii_bacterial_communities/res/SC --flavor ucsd --detailed
