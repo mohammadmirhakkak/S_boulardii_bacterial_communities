@@ -8,8 +8,6 @@ library(stringr)
 
 
 smetana = read.csv("mohammadmirhakkak/S_boulardii_bacterial_communities/res/_detailed_sorted.csv",header = TRUE)
-smetana_two = read.csv("mohammadmirhakkak/S_boulardii_bacterial_communities/dat/_detailed_compound_name.csv",header = TRUE,row.names = 1)
-smetana = rbind(smetana,smetana_two)
 
 # yeast model ID
 smetana[smetana$receiver=='yeast_smetana','receiver'] = "yeastGEM_v8.6.2"
