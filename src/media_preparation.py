@@ -188,6 +188,8 @@ media_dic['EX_ocdcea_e'] = -1000
 # import the models and find the required additional nutrients to make them viable
 # through FVA
 model_dir = glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/*.xml")
+model_dir = set(model_dir) - {'mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/yeast-GEM.xml',
+                             'mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/yeast_smetana.xml'}
 
 media = pd.DataFrame()
 gr_rates = []
