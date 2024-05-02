@@ -11,17 +11,17 @@ for SMATANA simulations
 
 import sys
 sys.path
-sys.path.append('/Users/mohammadmirhakkak/Documents/CPLEX_Studio128/cplex/python/3.6/x86-64_osx/')
+sys.path.append('/path/to/cplex/solver/')
 
 import cobra
 import pandas as pd
 import numpy as np
 
-yeast = cobra.io.read_sbml_model("/Users/mohammadmirhakkak/Documents/S_boulardii_modeling/models/20230206/yeast-GEM.xml")
+yeast = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/yeast-GEM.xml")
 
-id_mapping = pd.read_csv('S_boulardii_modeling/data/20230206/mets_map_v3.csv', index_col=0)
+id_mapping = pd.read_csv('mohammadmirhakkak/S_boulardii_bacterial_communities/dat/mets_map_v3.csv', index_col=0)
 
-bigg = pd.read_table("S_boulardii_modeling/data/20230206/bigg_models_reactions.txt")
+bigg = pd.read_table("mohammadmirhakkak/S_boulardii_bacterial_communities/dat/bigg_models_reactions.txt")
 
 bigg_rxn_id = []
 for i in id_mapping.AGORA_abbr.values:
@@ -205,8 +205,7 @@ id_mapping = pd.concat([id_mapping,table_add])
 
 # The id_mapping table is the most complete map of yeast metabolites IDs to
 # corresponding exchange reactions IDs of BiGG
-# I) make a yeast model for SMETANA; II) add a CARVEMEabbr column for pairwise
-# simulations with CarveMe models.
+# make a yeast model for SMETANA
 
 for i in range(len(yeast.reactions)):
     r = yeast.reactions[i]
@@ -296,4 +295,4 @@ yeast.reactions.r_0472.upper_bound = 0
 
 # after saving the model, kineticLaw must be added to the biomass reaction in
 # the sbml file
-cobra.io.write_sbml_model(yeast,"S_boulardii_modeling/models/20230206/smetana/yeast_smetana.xml")            
+cobra.io.write_sbml_model(yeast,"mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/yeast_smetana.xml")
