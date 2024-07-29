@@ -10,7 +10,7 @@ import pandas as pd
 import glob
 from cobra.flux_analysis import flux_variability_analysis
 
-model_dir = glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/models/*.xml")
+model_dir = glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/*.xml")
 
 
 gr_rules = []
