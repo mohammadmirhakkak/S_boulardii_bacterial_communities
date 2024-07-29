@@ -5,8 +5,7 @@ Created on Fri Feb 17 14:16:14 2023
 
 @author: mohammadmirhakkak
 
-This file makes the media matrix for the pairwise analysis using CarveMe models
-and makes a union of the media to make sure all the CarveMe models grow for
+This file makes a union of the media to make sure all the CarveMe models grow for
 the sake of SMETANA analysis
 """
 
