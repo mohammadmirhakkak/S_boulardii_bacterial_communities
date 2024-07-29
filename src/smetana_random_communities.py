@@ -14,7 +14,7 @@ import random
 from itertools import combinations
 
 
-model_dir = glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/models/random_models_smetana/*.xml")
+model_dir = glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/random_models_smetana/*.xml")
 model_file_names = [i.split('/')[-1][:-4] for i in model_dir]
 
 fungal_model_file_names = [mdir for mdir in model_file_names if mdir.endswith('_smetana')]
@@ -63,7 +63,7 @@ for n in range(20):
     comm_members = []
     comm_members_with_fungi = []
     bacterial_combination = combinations(bacterial_model_file_names, 4)
-    # make the community complete by adding every fungal model to every bacterial combinations
+    # make the community complete by adding every fungal model to every bacterial combination
     comm = []
     for bc in bacterial_combination:
         bc = list(bc)
