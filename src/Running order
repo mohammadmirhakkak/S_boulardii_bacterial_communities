@@ -1,0 +1,32 @@
+Running order to reproduce the results in the article
+
+
+First:
+
+yeast_smetana_adjustment -> Adjusts exchange reaction and metabolite IDs of the fungal models to the namespace of bacterial CarveMe models to be suitable as input for SMETANA.
+
+adjust_fungal_models_smetana -> Adjusts exchange reaction and metabolite IDs of the fungal models to the namespace of bacterial CarveMe models to be suitable as input for SMETANA.
+
+
+Second:
+
+smetana_preparation -> Makes a dataframe in which GEMs are grouped in communities. It would
+be the input for SMETANA calculations.
+
+media_preparation -> Makes a union of the media (essentials + SC defined media) to ensure that all the CarveMe models grow for the sake of SMETANA analysis.
+
+smetana_random_communities -> Make dataframe of communities of three, four, and five members (random selection with and without fungal models) as input for SMETANA.
+
+exchanged_metabolites_genes -> Makes the content of the Suppl table including FVA analysis and gene-reaction associations in GEMs.
+
+
+Third:
+
+smetana_run -> Runs the main SMETANA analysis in complete and SC media.
+
+smetana_run_rand_comms -> Runs the random SMETANA analysis.
+
+
+Last:
+
+plots -> plots all the result figures.
