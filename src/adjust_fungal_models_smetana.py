@@ -13,7 +13,7 @@ import numpy as np
 
 
 # Penicillium chrysogenum genome-scale model
-iAL1006 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/models/fungal/iAL1006.xml")
+iAL1006 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/fungal/iAL1006.xml")
 
 id_mapping = pd.read_csv('mohammadmirhakkak/S_boulardii_bacterial_communities/dat/mets_map_v3_carveme.csv', index_col=0)
 
@@ -137,7 +137,7 @@ for ex in iAL1006.exchanges:
 
 
 # Aspergillus niger genome-scale model
-iMA871 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/models/fungal/iMA871.xml")
+iMA871 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/fungal/iMA871.xml")
 
 for ex in iMA871.exchanges:
     met_name = list(ex.metabolites)[0].name.lower()
@@ -225,7 +225,7 @@ for ex in iMA871.exchanges:
 
 
 # Aspergillus oryzae genome-scale model
-iWV1314 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/models/fungal/iWV1314.xml")
+iWV1314 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/fungal/iWV1314.xml")
 
 # remove formula from met name
 for ex in iWV1314.exchanges:
@@ -333,6 +333,6 @@ iAL1006.reactions.EX_C183e_e.reaction = 'C183e <=>'
 iAL1006.objective = 'bmOUT'
 
 # save the modified models
-cobra.io.write_sbml_model(iAL1006,'mohammadmirhakkak/S_boulardii_bacterial_communities/models/random_models_smetana/iAL1006_smetana.xml')
-cobra.io.write_sbml_model(iMA871,'mohammadmirhakkak/S_boulardii_bacterial_communities/models/random_models_smetana/iMA871_smetana.xml')
-cobra.io.write_sbml_model(iWV1314,'Documents/S_boulardii_modeling/models/ISME_revision/models/random_models_smetana/iWV1314_smetana.xml')
+cobra.io.write_sbml_model(iAL1006,'mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/random_models_smetana/iAL1006_smetana.xml')
+cobra.io.write_sbml_model(iMA871,'mohammadmirhakkak/S_boulardii_bacterial_communities/GEMs/random_models_smetana/iMA871_smetana.xml')
+cobra.io.write_sbml_model(iWV1314,'Documents/S_boulardii_modeling/models/ISME_revision/GEMs/random_models_smetana/iWV1314_smetana.xml')
