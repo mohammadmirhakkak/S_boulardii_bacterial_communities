@@ -9,7 +9,7 @@ R dependencies:
 - dplyr
 - ggpubr
 - scales
-- string
+- stringr
 
 
 Python dependencies:
