@@ -10,18 +10,14 @@ import pandas as pd
 import glob
 import numpy as np
 
-fungal_model_dir = glob.glob("Desktop/candida albicans coreco refinement/GSMMs used as db/*.xml")
-
-# read the models one by one and adjust the exchange reaction and metabolite IDs
-
 
 
 # Penicillium chrysogenum genome-scale model
-iAL1006 = cobra.io.read_sbml_model("Desktop/candida albicans coreco refinement/GSMMs used as db/iAL1006.xml")
+iAL1006 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/models/fungal/iAL1006.xml")
 
-id_mapping = pd.read_csv('Documents/S_boulardii_modeling/data/20230206/mets_map_v3.csv', index_col=0)
+id_mapping = pd.read_csv('mohammadmirhakkak/S_boulardii_bacterial_communities/dat/mets_map_v3_carveme.csv', index_col=0)
 
-bigg = pd.read_table("Documents/S_boulardii_modeling/data/20230206/bigg_models_reactions.txt")
+bigg = pd.read_table("mohammadmirhakkak/S_boulardii_bacterial_communities/dat/bigg_models_reactions.txt")
 
 bigg_rxn_id = []
 for i in id_mapping.AGORA_abbr.values:
@@ -141,7 +137,7 @@ for ex in iAL1006.exchanges:
 
 
 # Aspergillus niger genome-scale model
-iMA871 = cobra.io.read_sbml_model("Desktop/candida albicans coreco refinement/GSMMs used as db/iMA871.xml")
+iMA871 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/models/fungal/iMA871.xml")
 
 for ex in iMA871.exchanges:
     met_name = list(ex.metabolites)[0].name.lower()
@@ -229,7 +225,7 @@ for ex in iMA871.exchanges:
 
 
 # Aspergillus oryzae genome-scale model
-iWV1314 = cobra.io.read_sbml_model("Desktop/candida albicans coreco refinement/GSMMs used as db/iWV1314.xml")
+iWV1314 = cobra.io.read_sbml_model("mohammadmirhakkak/S_boulardii_bacterial_communities/models/fungal/iWV1314.xml")
 
 # remove formula from met name
 for ex in iWV1314.exchanges:
@@ -337,6 +333,6 @@ iAL1006.reactions.EX_C183e_e.reaction = 'C183e <=>'
 iAL1006.objective = 'bmOUT'
 
 # save the modified models
-cobra.io.write_sbml_model(iAL1006,'Documents/S_boulardii_modeling/models/ISME_revision/random_models_smetana/iAL1006_smetana.xml')
-cobra.io.write_sbml_model(iMA871,'Documents/S_boulardii_modeling/models/ISME_revision/random_models_smetana/iMA871_smetana.xml')
-cobra.io.write_sbml_model(iWV1314,'Documents/S_boulardii_modeling/models/ISME_revision/random_models_smetana/iWV1314_smetana.xml')
+cobra.io.write_sbml_model(iAL1006,'mohammadmirhakkak/S_boulardii_bacterial_communities/models/random_models_smetana/iAL1006_smetana.xml')
+cobra.io.write_sbml_model(iMA871,'mohammadmirhakkak/S_boulardii_bacterial_communities/models/random_models_smetana/iMA871_smetana.xml')
+cobra.io.write_sbml_model(iWV1314,'Documents/S_boulardii_modeling/models/ISME_revision/models/random_models_smetana/iWV1314_smetana.xml')
