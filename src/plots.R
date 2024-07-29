@@ -176,27 +176,7 @@ smetana[smetana$compound_name == "L-Valine","compound_name"] = "Val"
 smetana[smetana$compound_name == "L-Methionine","compound_name"] = "Met"
 smetana[smetana$compound_name == "L-Tyrosine","compound_name"] = "Tyr"
 
-#comm_ids <- list()
-#comm_ids[[1]] <- c("quad-green-yeast-643")
-#comm_ids[[2]] <- c("tri-green-yeast-154")
-#comm_ids[[3]] <- c("tri-green-yeast-315")
-#comm_ids[[4]] <- c("tri-green-yeast-322")
-#comm_ids[[5]] <- c("two-green-yeast-74")#
-#comm_ids[[6]] <- c("tri-green-yeast-325")
-#comm_ids[[7]] <- c("tri-green-yeast-309")
-#comm_ids[[8]] <- c("tri-green-yeast-321")
-#comm_ids[[9]] <- c("tri-green-yeast-119")
-#comm_ids[[10]] <- c("tri-red-green-yeast-41")
-#comm_ids[[13]] <- c("tri-green-yeast-130")
-#comm_ids[[14]] <- c("quad-green-yeast-446")
-#comm_ids[[15]] <- c("tri-red-green-yeast-31")
-#comm_ids[[16]] <- c("tri-green-yeast-353")#
-#comm_ids[[17]] <- c("quad-green-yeast-1070")#
-#comm_ids[[18]] <- c("tri-red-green-yeast-50")#
-#comm_ids_num = c(c(1:10),c(13:18))
-
 # based on labels in fig4a
-comm_ids <- list()
 comm_ids[[1]] <- c("quad-green-yeast-643")
 comm_ids[[2]] <- c("tri-green-yeast-154")
 comm_ids[[3]] <- c("tri-green-yeast-315")
@@ -218,11 +198,19 @@ comm_ids[[18]] <- c("tri-red-green-yeast-39")
 comm_ids[[19]] <- c("tri-red-green-yeast-43")
 comm_ids[[20]] <- c("tri-red-green-yeast-86")
 comm_ids[[21]] <- c("tri-red-green-yeast-67")
-comm_ids[[22]] <- c("tri-green-yeast-402")
-comm_ids[[23]] <- c("tri-green-yeast-430")
-comm_ids[[24]] <- c("tri-green-yeast-130")
-comm_ids[[25]] <- c("quad-green-yeast-446")
-comm_ids_num = c(c(1:21),c(22:25))
+comm_ids[[22]] <- c("tri-green-yeast-163")
+comm_ids[[23]] <- c("tri-green-yeast-451")
+comm_ids[[24]] <- c("tri-green-yeast-402")
+comm_ids[[25]] <- c("tri-green-yeast-430")
+comm_ids[[26]] <- c("tri-green-yeast-130")
+comm_ids[[27]] <- c("quad-green-yeast-446")
+comm_ids[[28]] <- c("quad-green-yeast-447")
+comm_ids[[29]] <- c("quad-green-yeast-525")
+comm_ids[[30]] <- c("tri-green-yeast-105")
+comm_ids[[31]] <- c("tri-green-yeast-112")
+comm_ids[[32]] <- c("tri-red-green-yeast-73")
+comm_ids[[33]] <- c("tri-green-yeast-164")
+comm_ids_num = c(c(1:23),c(24:33))
 
 
 AA <- c("Trp","Arg","Ile","Ala","Lys","Phe","Leu","Asn","Cys","Thr",
@@ -303,7 +291,7 @@ p1 <- ggplot(donation,aes(x = Donor, y = SMETANA)) +
   scale_shape_manual(values = c("complete" = 21))
 
 
-pdf("mohammadmirhakkak/S_boulardii_bacterial_communities/res/smetana_fig4_all_AA.pdf",width = 8.5,height = 2)
+pdf("mohammadmirhakkak/S_boulardii_bacterial_communities/res/smetana_figS13_all_AA.pdf",width = 8.5,height = 2)
 p1
 dev.off()
 
@@ -378,12 +366,20 @@ comm_ids[[18]] <- c("tri-red-green-39","tri-red-green-yeast-39")
 comm_ids[[19]] <- c("tri-red-green-43","tri-red-green-yeast-43")
 comm_ids[[20]] <- c("tri-red-green-86","tri-red-green-yeast-86")
 comm_ids[[21]] <- c("tri-red-green-67","tri-red-green-yeast-67")
-comm_ids[[22]] <- c("tri-green-402","tri-green-yeast-402")
-comm_ids[[23]] <- c("tri-green-430","tri-green-yeast-430")
-comm_ids[[24]] <- c("tri-green-130","tri-green-yeast-130")
-comm_ids[[25]] <- c("quad-green-446","quad-green-yeast-446")
-comm_ids_num = c(c(1:21),c(22:25))
-comm_sizes_wo_yeast = c(4,rep(3,13),4,rep(3,9),4)
+comm_ids[[22]] <- c("tri-green-163","tri-green-yeast-163")
+comm_ids[[23]] <- c("tri-green-451","tri-green-yeast-451")
+comm_ids[[24]] <- c("tri-green-402","tri-green-yeast-402")
+comm_ids[[25]] <- c("tri-green-430","tri-green-yeast-430")
+comm_ids[[26]] <- c("tri-green-130","tri-green-yeast-130")
+comm_ids[[27]] <- c("quad-green-446","quad-green-yeast-446")
+comm_ids[[28]] <- c("quad-green-447","quad-green-yeast-447")
+comm_ids[[29]] <- c("quad-green-525","quad-green-yeast-525")
+comm_ids[[30]] <- c("tri-green-105","tri-green-yeast-105")
+comm_ids[[31]] <- c("tri-green-112","tri-green-yeast-112")
+comm_ids[[32]] <- c("tri-red-green-73","tri-red-green-yeast-73")
+comm_ids[[33]] <- c("tri-green-164","tri-green-yeast-164")
+comm_ids_num = c(c(1:23),c(24:33))
+comm_sizes_wo_yeast = c(4,rep(3,13),4,rep(3,11),rep(4,3),rep(3,4))
 
 unq_met = unique(smetana$compound_name)
 smetana_per_met_y = list()
@@ -449,7 +445,7 @@ df_smetana_norm$media = "complete"
 df_smetana_norm$Yeast <- factor(df_smetana_norm$Yeast, levels = c("Without yeast","With yeast"))
 
 ggexport_plots <- list()
-#len(unq_met) = 124; devide the number by 12 (No. plots per page)
+#len(unq_met) = 124; divide the number by 12 (No. plots per page)
 for (i in 0:10){
   ggarrange_plots <- list()
   for (j in 1:12){
@@ -497,3 +493,136 @@ for (i in 0:10){
 
 ggexport(plotlist = ggexport_plots,
          filename = "mohammadmirhakkak/S_boulardii_bacterial_communities/res/Suppl_smetana_all_compounds.pdf",width = 8, height = 8)
+
+
+
+#################################
+######## Random vs Study ########
+#################################
+
+final_res_combined <- data.frame()
+ggexport_plots <- list()
+#20 randomized community sets; divide the number by 9 (No. plots per page)
+for (i in 0:2){ # two pages
+  ggarrange_plots <- list()
+  for (j in 1:9){
+    if (i*9+j > 20){
+      break
+    }
+    
+    org_res = read.csv("mohammadmirhakkak/S_boulardii_bacterial_communities/res/_global_sorted.csv")
+    random_res_directory = paste0("mohammadmirhakkak/S_boulardii_bacterial_communities/res/random_communities_",j,"_global.tsv")
+    random_res = read.table(random_res_directory,sep = '\t',header = TRUE)
+    
+    # numerize random_res
+    random_res$size <- as.numeric(random_res$size)
+    random_res$mip <- as.numeric(random_res$mip)
+    random_res$mro <- as.numeric(random_res$mro)
+    
+    # add a column indicating presence/absence of yeast/fungi
+    yeast_presence <- ifelse(str_detect(org_res$community, "yeast"), "yes", "no")
+    org_res$with_yeast <- yeast_presence
+    fungi_presence <- ifelse(str_detect(random_res$community, "_with_fungi"), "yes", "no")
+    random_res$with_fungi <- fungi_presence
+    
+    # remove "-yeast"/"_with_fungi" from community name
+    for (k in 1:nrow(org_res)){
+      org_res$community[k] <- str_remove(org_res$community[k],'-yeast')
+    }
+    for (k in 1:nrow(random_res)){
+      random_res$community[k] <- str_remove(random_res$community[k],'_with_fungi')
+    }
+    
+    # split tables into with and without yeast/fungi
+    org_res_with <- org_res[org_res$with_yeast=='yes',]
+    org_res_with <- org_res_with[order(org_res_with$community),]
+    org_res_without <- org_res[org_res$with_yeast=='no',]
+    org_res_without <- org_res_without[order(org_res_without$community),]
+    random_res_with <- random_res[random_res$with_fungi=='yes',]
+    random_res_with <- random_res_with[order(random_res_with$community),]
+    random_res_without <- random_res[random_res$with_fungi=='no',]
+    random_res_without <- random_res_without[order(random_res_without$community),]
+    
+    # calculate log2(with/without)
+    fc_mip_org <- log2(org_res_with$mip/org_res_without$mip)
+    fc_mro_org <- log2(org_res_with$mro/org_res_without$mro)
+    fc_mip_random <- log2(random_res_with$mip/random_res_without$mip)
+    fc_mro_random <- log2(random_res_with$mro/random_res_without$mro)
+    fc_org <- log2((org_res_with$mip/org_res_with$mro)/(org_res_without$mip/org_res_without$mro))
+    fc_random <- log2((random_res_with$mip/random_res_with$mro)/(random_res_without$mip/random_res_without$mro))
+    
+    # make data table for visualization
+    t1 <- org_res_with[,c("community","medium")]
+    t1$score <- fc_mip_org
+    t1$score_type <- "MIP"
+    t1$group <- "Study"
+    t1$modified_name <- c(1:nrow(t1))
+    
+    t2 <- org_res_with[,c("community","medium")]
+    t2$score <- fc_mro_org
+    t2$score_type <- "MRO"
+    t2$group <- "Study"
+    t2$modified_name <- c(1:nrow(t2))
+    
+    t3 <- org_res_with[,c("community","medium")]
+    t3$score <- fc_org
+    t3$score_type <- "MIP/MRO"
+    t3$group <- "Study"
+    t3$modified_name <- c(1:nrow(t3))
+    
+    t4 <- random_res_with[,c("community","medium")]
+    t4$score <- fc_mip_random
+    t4$score_type <- "MIP"
+    t4$group <- "Random"
+    t4$modified_name <- c((nrow(t1)+1):(nrow(t1)+nrow(t4)))
+    
+    t5 <- random_res_with[,c("community","medium")]
+    t5$score <- fc_mro_random
+    t5$score_type <- "MRO"
+    t5$group <- "Random"
+    t5$modified_name <- c((nrow(t2)+1):(nrow(t2)+nrow(t5)))
+    
+    t6 <- random_res_with[,c("community","medium")]
+    t6$score <- fc_random
+    t6$score_type <- "MIP/MRO"
+    t6$group <- "Random"
+    t6$modified_name <- c((nrow(t3)+1):(nrow(t3)+nrow(t6)))
+    
+    final_res <- rbind(t1,t2,t3,t4,t5,t6)
+    final_res$group <- as.factor(final_res$group)
+    final_res$random_community <- paste("Random_communities",i*9+j)
+    
+    final_res_combined <- rbind(final_res_combined,final_res)
+    
+    # save the results table
+    #save_directory = paste0("Documents/S_boulardii_modeling/results/ISME_revision/random",j,"_vs_study.csv")
+    #write.csv(final_res,save_directory)
+    
+    
+    # box plots
+    p <- ggplot(final_res,aes(x = group, y = score)) + 
+      geom_boxplot(aes(fill = group), col = "black", show.legend = FALSE) +
+      ylab("log2FC") + 
+      ggtitle(paste("Random communities",9*i+j)) +
+      theme_classic() +
+      facet_wrap(~score_type, ncol=3) +
+      theme(strip.background = element_blank(),
+            strip.text = element_text(size = 7),
+            title = element_text(size = 7),
+            axis.title.y = element_text(size = 7),
+            #axis.ticks.x = element_blank(),
+            legend.position = "none",
+            axis.title.x = element_blank(),
+            axis.text.x = element_text(angle = 45, hjust=1,size = 7),
+            text = element_text(size = 8)) +
+      stat_compare_means(label = "p.signif",paired = FALSE,label.x = 1.4, size = 2)
+    
+    ggarrange_plots[[j]] <- p
+  }
+  ggexport_plots[[i+1]] <- ggarrange(plotlist = ggarrange_plots,ncol = 3, nrow = 3)
+}
+
+ggexport(plotlist = ggexport_plots,
+         filename = "mohammadmirhakkak/S_boulardii_bacterial_communities/res/random_vs_study.pdf",width = 8, height = 8)
+
+write.csv(final_res_combined,"mohammadmirhakkak/S_boulardii_bacterial_communities/res/random_vs_study.csv")
