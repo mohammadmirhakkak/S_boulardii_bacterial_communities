@@ -10,7 +10,7 @@ import pandas as pd
 import glob
 from cobra.flux_analysis import flux_variability_analysis
 
-model_dir = glob.glob("Documents/S_boulardii_modeling/models/20230206/smetana/GEMs/*.xml")
+model_dir = glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/models/*.xml")
 
 
 gr_rules = []
@@ -85,6 +85,6 @@ fva_all = fva_all.loc[:,['GSMM ID','Reaction ID','Reaction name','minimum','maxi
 fva_all.columns = ['GSMM ID','Reaction ID','Reaction name','Minimum flux','Maximum flux']
 fva_all.index = range(fva_all.shape[0])
 
-with pd.ExcelWriter("Documents/S_boulardii_modeling/results/ISME_revision/exchanged_metabolites.xlsx") as writer:
+with pd.ExcelWriter("mohammadmirhakkak/S_boulardii_bacterial_communities/res/exchanged_metabolites.xlsx") as writer:
     ex_met_genes.to_excel(writer,sheet_name='Gene Association',index=False)
     fva_all.to_excel(writer,sheet_name = 'Flux Variability Analysis',index=False)
