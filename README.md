@@ -19,3 +19,5 @@ Python dependencies:
 - pandas
 - numpy
 - itertools
+- sys
+- glob
