@@ -5,7 +5,7 @@ Created on Mon Mar 27 12:35:59 2023
 
 @author: mohammadmirhakkak
 
-Make dataframe of communities of four members (random selection) as input for
+Make dataframe of communities of three, four, and five members (random selection with and without fungal models) as input for
 SMETANA
 """
 import pandas as pd
@@ -14,7 +14,7 @@ import random
 from itertools import combinations
 
 
-model_dir = glob.glob("Documents/S_boulardii_modeling/models/ISME_revision/random_models_smetana/*.xml")
+model_dir = glob.glob("mohammadmirhakkak/S_boulardii_bacterial_communities/models/random_models_smetana/*.xml")
 model_file_names = [i.split('/')[-1][:-4] for i in model_dir]
 
 fungal_model_file_names = [mdir for mdir in model_file_names if mdir.endswith('_smetana')]
@@ -34,7 +34,7 @@ for n in range(20):
     comm_members = []
     comm_members_with_fungi = []
     bacterial_combination = combinations(bacterial_model_file_names, 3)
-    # make the community complete by adding every fungal model to every bacterial combinations
+    # make the community complete by adding every fungal model to every bacterial combination
     comm = []
     for bc in bacterial_combination:
         bc = list(bc)
@@ -90,5 +90,5 @@ for n in range(20):
     
     df_comms = pd.concat([df_comms_4,df_comms_5,df_comms_4_with_fungi,df_comms_5_with_fungi])
     
-    df_comms.to_csv('Documents/S_boulardii_modeling/results/ISME_revision/random_communities_' + str(n+1) + '.tsv',
+    df_comms.to_csv('mohammadmirhakkak/S_boulardii_bacterial_communities/res/random_communities_' + str(n+1) + '.tsv',
                        sep = '\t', header = False, index = False)
